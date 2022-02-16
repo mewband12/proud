@@ -1,4 +1,4 @@
-<div class="container mt-3">
+<div class="container mt-3 bg-white">
   <div class="row justify-content-center">
     <div class="col">
       <h1>Thankyou So much na krub</h1>
@@ -62,11 +62,21 @@
   </div>
 
   <button type="button" onclick="myFunction()" class="btn btn-outline-danger btn-lg btn-block mt-5">Press</button>
-  <p id="1"> I love you </p>
+  <h2 id = "1" class="text-white text-center"> I love you </p>
+  <button id = "2" type="button" onclick="myFunction2()" class="btn btn-outline-danger btn-lg btn-block mt-5 invisible">Press again</button>
+  <h2 id = "3" class="text-white text-center"> เป็นแฟนกันไหม? </p>
 </div>
 
 <script>
 function myFunction() {
-  document.getElementById("1").value = "two";
+  document.getElementById("1").classList.add('text-dark');
+  document.getElementById("1").classList.remove('text-white');
+  document.getElementById("2").classList.remove('invisible');
+  console.log("hi");
+}
+function myFunction2() {
+  document.getElementById("3").classList.add('text-dark');
+  document.getElementById("3").classList.remove('text-white');
+  console.log("hi");
 }
 </script>
