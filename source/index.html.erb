@@ -3,6 +3,7 @@
     <div class="col">
       <h1>Thankyou So much na krub</h1>
       <p>ขอบคุณที่รักกัน Proud Bong</p>
+      <a href="" class="play-video">start video</a>
     </div>
   </div>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -62,13 +63,21 @@
   </div>
 
   <button type="button" onclick="myFunction()" class="btn btn-outline-danger btn-lg btn-block mt-5">Press</button>
-  <h2 id = "1" class="text-white text-center"> I love you </p>
+  <h2 id = "1" class="text-white text-center"> ขอบคุณที่คอยเป็นห่วง </p>
   <button id = "2" type="button" onclick="myFunction2()" class="btn btn-outline-danger btn-lg btn-block mt-5 invisible">Press again</button>
-  <h2 id = "3" class="text-white text-center"> เป็นแฟนกันไหม? </p>
-  <iframe width="560" height="315" src="https://www.youtube.com/embed/m__oafvzDg0?rel=0&autoplay=1&enablejsapi=1" frameborder="0" allow="autoplay;" allowfullscreen></iframe>
+  <h2 id = "3" class="text-white text-center"> ขอบุณที่ดูแลตอนที่ทุกข์ </p>
+  <button id = "4" type="button" onclick="myFunction3()" class="btn btn-outline-danger btn-lg btn-block mt-5 invisible">Press again</button>
+  <h2 id = "5" class="text-white text-center"> ขอบุณสำหรับช่วงเวลาดีๆ </p>
+  <button id = "6" type="button" onclick="myFunction4()" class="btn btn-outline-danger btn-lg btn-block mt-5 invisible">Press again</button>
+  <h2 id = "7" class="text-white text-center"> เป็นแฟนกันนะ </p>
+  <iframe class = "youtube-video" style="display:none" width="560" height="315" src="https://www.youtube.com/embed/m__oafvzDg0?rel=0&autoplay=1&enablejsapi=1&muted=1" frameborder="0" allow="autoplay;" allowfullscreen></iframe>
+
 </div>
 
 <script>
+$('a.play-video').click(function(){
+  $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
+});
 function myFunction() {
   document.getElementById("1").classList.add('text-dark');
   document.getElementById("1").classList.remove('text-white');
@@ -78,6 +87,19 @@ function myFunction() {
 function myFunction2() {
   document.getElementById("3").classList.add('text-dark');
   document.getElementById("3").classList.remove('text-white');
+  document.getElementById("4").classList.remove('invisible');
+  console.log("hi");
+}
+function myFunction3() {
+  document.getElementById("5").classList.add('text-dark');
+  document.getElementById("5").classList.remove('text-white');
+  document.getElementById("6").classList.remove('invisible');
+  console.log("hi");
+}
+function myFunction4() {
+  document.getElementById("7").classList.add('text-dark');
+  document.getElementById("7").classList.remove('text-white');
+  // document.getElementById("6").classList.remove('invisible');
   console.log("hi");
 }
 </script>
