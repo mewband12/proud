@@ -2,8 +2,12 @@
   <div class="row justify-content-center">
     <div class="col">
       <h1>Thankyou So much na krub</h1>
-      <p>ขอบคุณที่รักกัน Proud Bong</p>
-      <a href="" class="play-video">start video</a>
+      <div class="d-flex">
+        <p>ขอบคุณที่รักกัน Proud Bong....</p>
+        <p class="text-white">...........</p>
+        <%# <a href="" class="play-video">start video</a> %>
+        <iframe class = "youtube-vido w-25 justify-content-end" style="height:20px;" src="https://www.youtube.com/embed/m__oafvzDg0?rel=0&autoplay=1&enablejsapi=1&muted=1" frameborder="0" allow="autoplay;" allowfullscreen></iframe>
+      </div>
     </div>
   </div>
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
@@ -71,31 +75,14 @@
   <button id = "6" type="button" onclick="myFunction4()" class="btn btn-outline-danger btn-lg btn-block mt-5 invisible">Press again</button>
   <h2 id = "7" class="text-white text-center"> เป็นแฟนกันนะ </p>
   <iframe class = "youtube-video" style="display:none" width="560" height="315" src="https://www.youtube.com/embed/m__oafvzDg0?rel=0&autoplay=1&enablejsapi=1&muted=1" frameborder="0" allow="autoplay;" allowfullscreen></iframe>
-
+  <button onclick="startPlayback()">Start Playback</button>
 </div>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
 $('a.play-video').click(function(){
   $('.youtube-video')[0].contentWindow.postMessage('{"event":"command","func":"' + 'playVideo' + '","args":""}', '*');
 });
-jQuery.event.special.touchstart = {
-  setup: function( _, ns, handle ){
-    if ( ns.includes("noPreventDefault") ) {
-      this.addEventListener("touchstart", handle, { passive: false });
-    } else {
-      this.addEventListener("touchstart", handle, { passive: true });
-    }
-  }
-};
-jQuery.event.special.touchmove = {
-  setup: function( _, ns, handle ){
-    if ( ns.includes("noPreventDefault") ) {
-      this.addEventListener("touchmove", handle, { passive: false });
-    } else {
-      this.addEventListener("touchmove", handle, { passive: true });
-    }
-  }
-};
+// document.addEventListener('touchstart', handler, {passive: true});
 function myFunction() {
   document.getElementById("1").classList.add('text-dark');
   document.getElementById("1").classList.remove('text-white');
